@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Картриджи</h1>
+
+    {% if cartridges_list %}
+        <table class="table">
+            <div class="container">
+                <thead>
+                <div class="row">
+                    <tr>
+                        <th scope="col">
+                            <div class="col-sm">Дата выполнения</div>
+                        </th>
+                        <th scope="col">
+                            <div class="col-sm">Адресс доставки</div>
+                        </th>
+                        <th scope="col">
+                            <div class="col-sm">Картриджей всего</div>
+                        </th>
+                    </tr>
+                </div>
+                </thead>
+            </div>
+        </table>
+
+        {% for cartridges in cartridges_list %}
+            <table class="table">
+                <div class="container">
+                    <tbody>
+                    <div class="row">
+                        <tr>
+                            <td>
+                                <div class="col-sm" class="alert alert-info">{{ cartridges.date_of_repairs }}</div>
+                            </td>
+                            <td>
+                                <div class="col-sm" class="alert alert-info">{{ cartridges.address }}</div>
+                            </td>
+                            <td>
+                                <div class="col-sm" class="alert alert-info">{{ cartridges.total }}</div>
+                            </td>
+                        </tr>
+                    </div>
+                    </tbody>
+                </div>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p>There are no books borrowed.</p>
+    {% endif %}
+{% endblock %}
