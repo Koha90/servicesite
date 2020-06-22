@@ -4,7 +4,7 @@ import uuid
 
 # Cartridges
 class Cartridges(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    id = models.AutoField(primary_key=True)
     date_of_repairs = models.DateField()
     address = models.CharField(max_length=250)
     total = models.IntegerField()
